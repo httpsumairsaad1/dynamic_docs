@@ -11,14 +11,6 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 import React from 'react';
 
-// import { FloatingComposer, FloatingThreads, liveblocksConfig, LiveblocksPlugin, useEditorStatus } from '@liveblocks/react-lexical'
-// import Loader from '../Loader';
-
-// import FloatingToolbarPlugin from './plugins/FloatingToolbarPlugin'
-// import { useThreads } from '@liveblocks/react/suspense';
-// import Comments from '../Comments';
-// import { DeleteModal } from '../DeleteModal';
-
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
 // try to recover gracefully without losing user data.
@@ -28,7 +20,6 @@ function Placeholder() {
 }
 
 export function Editor() {
-
   const initialConfig = {
     namespace: 'Editor',
     nodes: [HeadingNode],
@@ -42,23 +33,20 @@ export function Editor() {
   return (
     <LexicalComposer initialConfig={initialConfig}>
       <div className="editor-container size-full">
-        <div className="toolbar-wrapper flex min-w-full justify-between">
-          <ToolbarPlugin />
-          {/* {currentUserType === 'editor' && <DeleteModal roomId={roomId} />} */}
-        </div>
+        <ToolbarPlugin />
 
         <div className="editor-inner h-[1100px]">
-              <RichTextPlugin
-                contentEditable={
-                  <ContentEditable className="editor-input h-full" />
-                }
-                placeholder={<Placeholder />}
-                ErrorBoundary={LexicalErrorBoundary}
-              />
-              <HistoryPlugin />
-              <AutoFocusPlugin />
-            </div>
+          <RichTextPlugin
+            contentEditable={
+              <ContentEditable className="editor-input h-full" />
+            }
+            placeholder={<Placeholder />}
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+          <HistoryPlugin />
+          <AutoFocusPlugin />
         </div>
+      </div>
     </LexicalComposer>
   );
 }
