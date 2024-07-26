@@ -5,6 +5,7 @@ const Document = () => {
   return (
     <div>
       <Editor/>
+      {/* Doc */}
     </div>
   )
 }
