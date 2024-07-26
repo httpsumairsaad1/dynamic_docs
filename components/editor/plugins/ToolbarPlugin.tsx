@@ -151,6 +151,7 @@ export default function ToolbarPlugin() {
         className={
           'toolbar-item spaced ' + (activeBlock === 'h1' ? 'active' : '')
         }
+        title="Heading 1" // Add title attribute here
       >
         <i className="format h1" />
       </button>
@@ -160,6 +161,7 @@ export default function ToolbarPlugin() {
         className={
           'toolbar-item spaced ' + (activeBlock === 'h2' ? 'active' : '')
         }
+        title="Heading 2" // Add title attribute here
       >
         <i className="format h2" />
       </button>
@@ -169,6 +171,7 @@ export default function ToolbarPlugin() {
         className={
           'toolbar-item spaced ' + (activeBlock === 'h3' ? 'active' : '')
         }
+        title="Heading 3" // Add title attribute here
       >
         <i className="format h3" />
       </button>
