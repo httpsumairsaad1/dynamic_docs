@@ -11,7 +11,7 @@ const Header = ({ children }: HeaderProps) => {
     <div className="header">
       <Link href='/' className="md:flex-1">
         <Image 
-          src="/assets/icons/logo.svg"
+          src="/assets/icons/logo-dd.png"
           alt="Logo with name"
           width={120}
           height={32}
