@@ -12,7 +12,7 @@ const Header = ({ children }: HeaderProps) => {
       <Link href='/' className="md:flex-1">
         <Image 
           src="/assets/icons/logo-dd.png"
-          alt="Logo with name"
+          alt="Dynamic Docs Logo"
           width={120}
           height={32}
           className="hidden md:block"

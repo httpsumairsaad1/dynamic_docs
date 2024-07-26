@@ -1,5 +1,7 @@
 import "./globals.css"
-import { Inter as FontSans } from "next/font/google"
+import { Darker_Grotesque, Inter as FontSans } from "next/font/google"
+import { dark } from "@clerk/themes"
+
 import { Metadata } from "next"
 
 import { cn } from "@/lib/utils"
@@ -15,9 +17,18 @@ export const metadata: Metadata = {
   description: 'Your trusted partner for collaborative editing.',
 }
 
+
 export default function RootLayout({ children }: {children: React.ReactNode}) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+        variables: { 
+          colorPrimary: "#3371FF" ,
+          fontSize: '16px'
+        },
+      }}
+    >
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
