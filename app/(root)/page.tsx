@@ -5,7 +5,7 @@ import React from 'react'
 const Home = () => {
   return (
     <div>
-      <Editor/>
+      Home
     </div>
   )
 }
