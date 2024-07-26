@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google"
 import { Metadata } from "next"
 
 import { cn } from "@/lib/utils"
+import { ClerkProvider } from "@clerk/nextjs"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: {children: React.ReactNode}) {
   return (
+    <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
@@ -26,5 +28,6 @@ export default function RootLayout({ children }: {children: React.ReactNode}) {
         {children}
       </body>
     </html>
+    </ClerkProvider>
   )
 }
