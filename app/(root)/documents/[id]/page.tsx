@@ -7,7 +7,7 @@ const Document = () => {
   return (
     <div>
       <Header>
-        <p className='text-white'>Right Side Test</p>
+        <p className='text-white'>Share</p>
 
         <SignedOut>
           <SignInButton />
