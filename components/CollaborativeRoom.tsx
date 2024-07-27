@@ -18,12 +18,15 @@ const CollaborativeRoom = () => {
                     <div className='flex w-fit items-center justify-center gap-2'>
                     <p className='document title'>Share</p>
                     </div>
+
                     <SignedOut>
-                    <SignInButton />
+                      <SignInButton />
                     </SignedOut>
+
                     <SignedIn>
-                    <UserButton />
+                      <UserButton />
                     </SignedIn>
+                    
                 </Header>
                 <Editor/>
           </div>

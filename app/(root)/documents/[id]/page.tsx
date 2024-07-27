@@ -1,10 +1,13 @@
 // query id = 1
 
+import CollaborativeRoom from "@/components/CollaborativeRoom"
+
 const Document = () => {
   return (
-    <div>
+    <main className="flex w-full flex-col items-center">
       {/* Doc */}
-    </div>
+      <CollaborativeRoom></CollaborativeRoom>
+    </main>
   )
 }
 
