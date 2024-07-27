@@ -19,10 +19,10 @@ const CollaborativeRoom = () => {
                     <p className='document title'>Share</p>
                     </div>
 
-                    <SignedOut>
+                    <SignedOut>globa
                       <SignInButton />
                     </SignedOut>
-
+  
                     <SignedIn>
                       <UserButton />
                     </SignedIn>
@@ -36,4 +36,3 @@ const CollaborativeRoom = () => {
 }
 
 export default CollaborativeRoom
-CollaborativeRoom
