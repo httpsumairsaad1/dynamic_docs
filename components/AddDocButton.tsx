@@ -1,10 +1,11 @@
 import React from 'react'
+import { Button } from './ui/button'
 
-const AddDocButton = () => {
+const AddDocButton = ({userId, email}: AddDocumentBtnProps) => {
   return (
-    <div>
-      Add Document Button
-    </div>
+    <Button>
+        <p className='hidden sm:block'>Start a blank document.</p>
+    </Button>
   )
 }
 
