@@ -4,7 +4,7 @@ import { dark } from "@clerk/themes"
 
 import { Metadata } from "next"
 
-import { cn } from "@/lib/utils"
+// import { cn } from "@/lib/utils"
 import { ClerkProvider } from "@clerk/nextjs"
 import Provider from "./Provider"
 
@@ -32,10 +32,12 @@ export default function RootLayout({ children }: {children: React.ReactNode}) {
     >
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-screen font-sans antialiased",
-          fontSans.variable
-        )}
+        className="min-h-screen font-sans antialiased"
+
+        // className={cn(
+        //   "min-h-screen font-sans antialiased",
+        //   fontSans.variable
+        // )}
       >
         <Provider>
         {children}
