@@ -25,7 +25,7 @@ export default function RootLayout({ children }: {children: React.ReactNode}) {
       appearance={{
         baseTheme: dark,
         variables: { 
-          colorPrimary: "#3371FF" ,
+          colorPrimary: "#3371FF",
           fontSize: '16px'
         },
       }}
