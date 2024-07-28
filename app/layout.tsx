@@ -3,8 +3,7 @@ import { Darker_Grotesque, Inter as FontSans } from "next/font/google"
 import { dark } from "@clerk/themes"
 
 import { Metadata } from "next"
-
-// import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { ClerkProvider } from "@clerk/nextjs"
 import Provider from "./Provider"
 

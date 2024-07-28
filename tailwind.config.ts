@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
-const { fontFamily } = require('tailwindcss/defaultTheme');
+import { fontFamily } from 'tailwindcss/defaultTheme';
+
 
 const config = {
   darkMode: ['class'],
@@ -40,9 +41,9 @@ const config = {
           500: '#2E3D5B',
         },
       },
-      fontFamily: {
-        sans: ['var(--font-sans)', ...fontFamily.sans],
-      },
+      // fontFamily: {
+      //   sans: ['var(--font-sans)', ...fontFamily.sans],
+      // },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
