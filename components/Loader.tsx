@@ -6,9 +6,10 @@ const Loader = () => {
     <div className="loader">
       <Image 
         src="/assets/icons/loader.svg"
+
         alt="loader"
-        width={32}
-        height={32}
+        width={40}
+        height={40}
         className="animate-spin"
       />
       Loading...
