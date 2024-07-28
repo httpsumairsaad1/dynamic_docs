@@ -7,7 +7,6 @@ type HeaderProps = {
     className?: string; // Added className to the HeaderProps type
 }
 
-
 const Header = ({ children, className }: HeaderProps) => {
   return (
     <div className={cn("header", className)}>
