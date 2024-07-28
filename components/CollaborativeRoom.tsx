@@ -1,6 +1,7 @@
 'use client'
 
 import { Editor } from '@/components/editor/Editor';
+import ActiveCollaborators from './ActiveCollaborators';
 import React from 'react'
 import {
     RoomProvider,
@@ -19,15 +20,19 @@ const CollaborativeRoom = () => {
                     <p className='document title'>Share</p>
                     </div>
 
-                    <SignedOut>globa
-                      <SignInButton />
-                    </SignedOut>
+                    <div className="flex w-full flex-1 justify-end gap-2 sm:gap-3">
+                      <ActiveCollaborators />
+
+                      <SignedOut>
+                        <SignInButton />
+                      </SignedOut>
   
-                    <SignedIn>
-                      <UserButton />
-                    </SignedIn>
-                    
-                </Header>
+                      <SignedIn>
+                        <UserButton />
+                      </SignedIn>
+
+                    </div>
+                 </Header>
                 <Editor/>
           </div>
         </ClientSideSuspense>
