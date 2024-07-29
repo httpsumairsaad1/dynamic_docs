@@ -4,6 +4,7 @@ import React, { createContext, ReactNode } from 'react';
 import { getClerkUsers } from '@/lib/actions/user.actions';
 import { ClientSideSuspense, LiveblocksProvider } from '@liveblocks/react/suspense';
 import Loader from '@/components/Loader';
+import { RoomProvider } from "@liveblocks/react";
 
 const Provider = ({children}: {children: ReactNode}) => {
   return (
@@ -13,9 +14,11 @@ const Provider = ({children}: {children: ReactNode}) => {
       return users;
     }}
     >
+      <RoomProvider id="your-room-id">
         <ClientSideSuspense fallback={<Loader/>}>
           {children}
         </ClientSideSuspense>
+      </RoomProvider>
     </LiveblocksProvider>
   )
 }
