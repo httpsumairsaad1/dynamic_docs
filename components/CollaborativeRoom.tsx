@@ -9,6 +9,7 @@ import {
   } from "@liveblocks/react/suspense";
   import Header from '@/components/Header'
   import { SignedIn, SignInButton, SignedOut, UserButton } from '@clerk/nextjs'
+  import { useEffect, useRef, useState } from 'react';
 
   // interface CollaborativeRoomProps {
   //   roomId: string;
@@ -17,6 +18,14 @@ import {
   
 // const CollaborativeRoom = () => {
   const CollaborativeRoom = ({ roomId, roomMetadata }: CollaborativeRoomProps) => {
+    
+    const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
+  const [editing, setEditing] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLDivElement>(null);
+
   return (
     <RoomProvider id={roomId}>
         <ClientSideSuspense fallback={<div>Loading…</div>}>
