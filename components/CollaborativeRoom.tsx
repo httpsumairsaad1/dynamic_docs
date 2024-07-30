@@ -10,9 +10,11 @@ import { Input } from './ui/input';
 import Image from 'next/image';
 import { updateDocument } from '@/lib/actions/room.actions';
 import Loader from './Loader';
-// import ShareModal from './ShareModal';
 
-const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: CollaborativeRoomProps) => {
+const CollaborativeRoom = ({ roomId, roomMetadata }: CollaborativeRoomProps) => {
+
+  const currentUserType = "editor"
+
   const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -40,6 +42,7 @@ const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: Col
     }
   }
 
+  // DOUBLE CLICK
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if(containerRef.current && !containerRef.current.contains(e.target as Node)) {
@@ -55,6 +58,7 @@ const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: Col
     }
   }, [roomId, documentTitle])
 
+  // RECALLED
   useEffect(() => {
     if(editing && inputRef.current) {
       inputRef.current.focus();
@@ -100,7 +104,8 @@ const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: Col
                 <p className="view-only-tag">View only</p>
               )}
 
-              {loading && <p className="text-sm text-gray-400">saving...</p>}
+              {loading && <p className="text-sm text-gray-400">saving...</p>} 
+
             </div>
             <div className="flex w-full flex-1 justify-end gap-2 sm:gap-3">
               <ActiveCollaborators />
@@ -120,7 +125,7 @@ const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: Col
               </SignedIn>
             </div>
           </Header>
-        {/* <Editor roomId={roomId} currentUserType={currentUserType} /> */}
+        <Editor />
         </div>
       </ClientSideSuspense>
     </RoomProvider>
